@@ -12,7 +12,7 @@ class Dice {
         (this.div as HTMLElement).textContent = value;
         return true;
     }
-  }
+}
   
 enum RollValues {
     One,
@@ -29,7 +29,7 @@ enum Colors {
     Blue,
     Green,
     Orange
-  }
+}
   
 class DieRoller extends Dice {
     static RollValues = RollValues;
