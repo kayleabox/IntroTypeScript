@@ -9,20 +9,8 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var Dice = /** @class */ (function () {
-    function Dice(div, valueDiv) {
-        this.div = div;
-        this.valueDiv = valueDiv;
-    }
-    Dice.prototype.rollDice = function (value) {
-        if (typeof (value) === "number") {
-            return true;
-        }
-        this.div.textContent = value;
-        return true;
-    };
-    return Dice;
-}());
+exports.__esModule = true;
+var dice_js_1 = require("./dice.js");
 var RollValues;
 (function (RollValues) {
     RollValues[RollValues["One"] = 0] = "One";
@@ -40,6 +28,14 @@ var Colors;
     Colors[Colors["Green"] = 3] = "Green";
     Colors[Colors["Orange"] = 4] = "Orange";
 })(Colors || (Colors = {}));
+var squareSizeNum = 50;
+var squareSize = squareSizeNum + "px";
+var borderColor = "black";
+var borderWidth = "5px";
+var borderStyle = "solid";
+var verticalAlign = "middle";
+var textAlign = "center";
+var display = "inline-block";
 var DieRoller = /** @class */ (function (_super) {
     __extends(DieRoller, _super);
     function DieRoller(div, valueDiv) {
@@ -68,40 +64,5 @@ var DieRoller = /** @class */ (function (_super) {
     DieRoller.RollValues = RollValues;
     DieRoller.Colors = Colors;
     return DieRoller;
-}(Dice));
-var elementSets = [];
-var squareSizeNum = 50;
-var squareSize = squareSizeNum + "px";
-var borderColor = "black";
-var borderWidth = "5px";
-var borderStyle = "solid";
-var verticalAlign = "middle";
-var textAlign = "center";
-var display = "inline-block";
-var rollButton = document.createElement('button');
-var listOfRolls = [];
-rollButton.textContent = "Roll Dice";
-for (var index = 0; index < 4; index++) {
-    elementSets.push({
-        'div': document.createElement('div'),
-        'valueDiv': document.createElement('div')
-    });
-}
-var getRandomIntInclusive = function (min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-};
-rollButton.onclick = function (event) {
-    listOfRolls.map(function (elem) {
-        elem.changeColor(getRandomIntInclusive(0, 4));
-        elem.rollDice(getRandomIntInclusive(0, 5));
-    });
-};
-elementSets.map(function (elem, index) {
-    var rollDiceClass = new DieRoller(elem.div, elem.valueDiv);
-    listOfRolls.push(rollDiceClass);
-    document.body.appendChild(elem.div);
-});
-document.body.appendChild(rollButton);
-//export default {};
+}(dice_js_1["default"]));
+exports["default"] = DieRoller;

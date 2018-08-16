@@ -1,3 +1,4 @@
+"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -8,6 +9,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+Object.defineProperty(exports, "__esModule", { value: true });
 var colorChange = /** @class */ (function () {
     function colorChange(div) {
         this.div = div;
@@ -68,4 +70,4 @@ elementSets.map(function (elem, index) {
     document.body.appendChild(elem.button);
     document.body.appendChild(elem.div);
 });
-//export default {};
+exports.default = {};

@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 var color = "green";
 var squareSizeNum = 100;
 var squareSize = squareSizeNum + "px";
@@ -17,4 +17,4 @@ button.onclick = function (event) {
 };
 document.body.appendChild(button);
 document.body.appendChild(div);
-exports["default"] = {};
+exports.default = {};

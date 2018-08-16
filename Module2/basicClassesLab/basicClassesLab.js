@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 var colorChange = /** @class */ (function () {
     function colorChange(div) {
         this.div = div;
@@ -37,4 +37,4 @@ elementSets.map(function (elem, index) {
     document.body.appendChild(elem.button);
     document.body.appendChild(elem.div);
 });
-exports["default"] = {};
+exports.default = {};
